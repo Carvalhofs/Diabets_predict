@@ -9,7 +9,7 @@ with st.form("features"):
     gordura_triceps = st.number_input ("Qual a espessura da gordura localizada no tríceps em milímetros?", value = 0)
     insulina = st.number_input ("Quantos ppm de Insulina foi reportado no último exame de sangue?", value = 0)
     ind_mass_corp = st.number_input ("Qual o seu índice de massa corporal?", value = 0)
-    fat_pred_diab = st.number_input ("Qual o seu fator de predisposição à diabetes?", value = 0, format = "%f")
+    fat_pred_diab = st.number_input ("Qual o seu fator de predisposição à diabetes?", value = 0.0, format = "%f")
     idade = st.number_input ("Qual a sua idade nesse momento?")
     
     enviar = st.form_submit_button("Enviar")

@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Diabets prediction")
 
-with st.form("imc")
+with st.form("imc"):
     altura = st.number_input ("Qual a sua altura em metros?")
     peso = st.number_input ("Qual o seu peso em Quilos (Kg)?")
     ind_mass_corp = peso/altura^2

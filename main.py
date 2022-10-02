@@ -5,9 +5,9 @@ st.title("Diabets prediction")
 with st.form("imc"):
     altura = st.number_input ("Qual a sua altura em metros?")
     peso = st.number_input ("Qual o seu peso em Quilos (Kg)?")
-    ind_mass_corp = peso/altura^2
     enviar = st.form_submit_button("Enviar")
     if enviar:
+        ind_mass_corp = peso/altura^2
         st.write(f'Seu índice de massa corpórea (IMC) é {ind_mass_corp}')
 with st.form("features"):
     numero_gravidez = st.number_input("Quantas vezes você já engravidou?", min_value = 0, value = 0)

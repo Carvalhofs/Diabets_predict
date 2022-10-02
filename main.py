@@ -1,5 +1,13 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+import pickle
+import streamlit as st
+from PIL import Image
 
+
+pickle_in = open('classifier.pkl', 'rb')
+classifier = pickle.load(pickle_in)
 st.title("Diabets prediction")
 
 with st.form("imc"):
@@ -7,7 +15,7 @@ with st.form("imc"):
     peso = st.number_input ("Qual o seu peso em Quilos (Kg)?")
     enviar = st.form_submit_button("Enviar")
     if enviar:
-        ind_mass_corp = (peso/(altura*altura)).round(2)
+        ind_mass_corp = (peso/(altura*altura))
         st.write(f'Seu índice de massa corpórea (IMC) é {ind_mass_corp}')
 with st.form("features"):
     numero_gravidez = st.number_input("Quantas vezes você já engravidou?", min_value = 0, value = 0)
@@ -19,7 +27,10 @@ with st.form("features"):
     idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
     
     enviar = st.form_submit_button("Enviar")
-
+prediction = classifier.predict(
+        [[ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade]])
+    print(prediction)
+    return prediction
 
 
 

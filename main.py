@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
-from PIL import Image
-
 
 pickle_in = open('classifier.pkl', 'rb')
 classifier = pickle.load(pickle_in)
@@ -28,9 +26,9 @@ with st.form("features"):
     
     enviar = st.form_submit_button("Enviar")
 
-def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade):  
+def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
-    prediction = classifier.predict(
+    prediction = model.predict(
         [[ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade]])
     print(prediction)
     return prediction

@@ -27,10 +27,11 @@ with st.form("features"):
     idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
     
     enviar = st.form_submit_button("Enviar")
-prediction = classifier.predict(
+
+def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade):  
+   
+    prediction = classifier.predict(
         [[ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade]])
     print(prediction)
     return prediction
-
-
 

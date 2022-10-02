@@ -18,8 +18,9 @@ with st.form("features"):
     insulina = st.number_input ("Quantos µIU/mL de Insulina foi reportado no último exame de sangue?", value = 0)
     fat_pred_diab = st.number_input ("Qual o seu fator de predisposição à diabetes? (baseado em histórico familiar)", value = 0.0, format = "%f")
     idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
-    ind_mass_corp = (peso/(altura*altura))
     enviar = st.form_submit_button("Enviar")
+
+ind_mass_corp = (peso/(altura*altura))
 
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
@@ -30,5 +31,5 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
 if enviar:
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
     st.write(prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade))
-    
+
 

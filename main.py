@@ -20,7 +20,7 @@ with st.form("features"):
     idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
     enviar = st.form_submit_button("Enviar")
 
-ind_mass_corp = (peso/(altura*altura))
+
 
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
@@ -29,6 +29,7 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
     print(prediction)
     return prediction
 if enviar:
+    ind_mass_corp = (peso/(altura*altura))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
     st.write(prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade))
 

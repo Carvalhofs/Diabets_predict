@@ -7,6 +7,9 @@ import pickle
 pickle_in = open('ensemble_model.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 st.title("Diabets prediction")
+pickle_in = open('ensemble_proba_model.pkl', 'rb')
+proba = pickle.load(pickle_in)
+
 
 with st.form("features"):
     altura = st.number_input ("Qual a sua altura em metros?")
@@ -22,13 +25,13 @@ with st.form("features"):
 
 
 
-def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
+def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier, model2 = proba):  
    
     prediction = model.predict(
         pd.DataFrame({'Pregnancies':[numero_gravidez], 'Glucose':[glicose], 'BloodPressure':[pressao_sangue], 'SkinThickness':[espessura_pele], 'Insulin':[insulina],
        'BMI':[ind_mass_corp], 'DiabetesPedigreeFunction':[fat_pred_diab], 'Age':[idade]}))
     print(prediction)
-    print(model.predict_proba(
+    print(model2.predict_proba(
         pd.DataFrame({'Pregnancies':[numero_gravidez], 'Glucose':[glicose], 'BloodPressure':[pressao_sangue], 'SkinThickness':[espessura_pele], 'Insulin':[insulina],
        'BMI':[ind_mass_corp], 'DiabetesPedigreeFunction':[fat_pred_diab], 'Age':[idade]})))
     return prediction

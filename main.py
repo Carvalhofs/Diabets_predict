@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import streamlit as st
 
-pickle_in = open('classifier.pkl', 'rb')
+pickle_in = open('ensemble_model.sav', 'rb')
 classifier = pickle.load(pickle_in)
 st.title("Diabets prediction")
 
@@ -29,7 +29,7 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
     print(prediction)
     return prediction
 if enviar:
-    ind_mass_corp = (peso/(altura*altura))
+    ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
     st.write(prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade))
 

@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 
-pickle_in = open('ensemble_model.sav', 'rb')
+pickle_in = open('ensemble_model.pkl', 'rb')
 classifier = pickle.load(pickle_in)
 st.title("Diabets prediction")
 

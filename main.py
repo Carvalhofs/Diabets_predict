@@ -24,13 +24,14 @@ with st.form("features"):
 
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
-    prediction_ = model.predict(
+    prediction = model.predict(
         [[ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade]])
-    print(prediction_)
-    return prediction_
+    print(prediction)
+    return prediction
 if enviar:
     ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
-    st.write(prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade))
+    resultado = prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
+    st.write(resultado)
 
 

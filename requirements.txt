@@ -4,3 +4,4 @@ sklearn
 matplotlib
 seaborn
 pickle5
+XGBClassifier

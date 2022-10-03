@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
-from xgboost import XGBClassifier
+
 
 pickle_in = open('ensemble_model.sav', 'rb')
 classifier = pickle.load(pickle_in)

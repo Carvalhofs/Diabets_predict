@@ -5,3 +5,4 @@ matplotlib
 seaborn
 pickle5
 xgboost
+lightgbm

@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import sklearn
 
 
 pickle_in = open('ensemble_model.sav', 'rb')
@@ -25,10 +24,10 @@ with st.form("features"):
 
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
-    prediction = model.predict(
+    prediction_ = model.predict(
         [[ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade]])
-    print(prediction)
-    return prediction
+    print(prediction_)
+    return prediction_
 if enviar:
     ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))

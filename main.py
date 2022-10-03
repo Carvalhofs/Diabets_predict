@@ -43,6 +43,7 @@ if enviar:
     if booleano [0] == 0:
         st.write ('Parabéns, você tem poucas chances de possuir diabetes. Continue cuidando da sua saúde.')
     else:
+        st.write(booleano)
         st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(booleano[1] [booleano[0]]))
 
 

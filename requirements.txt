@@ -6,3 +6,4 @@ seaborn
 pickle5
 xgboost
 lightgbm
+sklearn.ensemble

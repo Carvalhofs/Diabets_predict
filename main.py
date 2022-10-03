@@ -34,11 +34,15 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
     proba = model2.predict_proba(
         pd.DataFrame({'Pregnancies':[numero_gravidez], 'Glucose':[glicose], 'BloodPressure':[pressao_sangue], 'SkinThickness':[espessura_pele], 'Insulin':[insulina],
        'BMI':[ind_mass_corp], 'DiabetesPedigreeFunction':[fat_pred_diab], 'Age':[idade]}))
-    return prediction, proba
+    return [prediction, proba]
 if enviar:
     ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
-    resultado = prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
-    st.write(resultado)
+    booleano = prediction (ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
+
+    if booleano [0] == 0:
+        st.write ('Parabéns, você tem poucas chances de possuir diabetes. Continue cuidando da sua saúde.')
+    else:
+        st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(booleano[1] [booleano[0]]))
 
 

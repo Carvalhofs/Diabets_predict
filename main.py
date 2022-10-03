@@ -25,7 +25,7 @@ with st.form("features"):
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier):  
    
     prediction = model.predict(
-        pd.Dataframe({'Pregnancies':numero_gravidez, 'Glucose':glicose, 'BloodPressure':pressao_sangue, 'SkinThickness':espessura_pele, 'Insulin':insulina,
+        pd.DataFrame({'Pregnancies':numero_gravidez, 'Glucose':glicose, 'BloodPressure':pressao_sangue, 'SkinThickness':espessura_pele, 'Insulin':insulina,
        'BMI':ind_mass_corp, 'DiabetesPedigreeFunction':fat_pred_diab, 'Age':idade}))
     print(prediction)
     return prediction

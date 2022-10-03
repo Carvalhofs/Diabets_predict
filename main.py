@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import streamlit as st
+import sklearn
 
 
 pickle_in = open('ensemble_model.sav', 'rb')

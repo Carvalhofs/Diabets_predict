@@ -1,7 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import pickle
 import streamlit_modal as modal
 import streamlit.components.v1 as components
 

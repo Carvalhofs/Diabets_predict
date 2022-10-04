@@ -41,7 +41,7 @@ if open_modal:
     modal.open()
 
 if modal.is_open():
-    with modal.container(scrolling = True):
+    with modal.container(overflow = scroll):
         st.write("Responda os itens abaixo para ter um diagnóstico preliminar de Diabetes.")
         with st.form("features"):
             altura = st.number_input ("Qual a sua altura em metros?")

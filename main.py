@@ -10,8 +10,6 @@ if open_modal:
     modal.open()
 
 if modal.is_open():
-    with components.iframe('https://carvalhofs-diabets-predict-model-if4iuc.streamlitapp.com/'):
-
-        st.write("Some fancy text")
-        value = st.checkbox("Check me")
-        st.write(f"Checkbox checked: {value}")
+    with modal.container():
+        components.iframe('https://carvalhofs-diabets-predict-model-if4iuc.streamlitapp.com/')
+        

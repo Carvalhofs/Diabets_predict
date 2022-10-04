@@ -15,19 +15,6 @@ pickle_in = open('ensemble_proba_model.pkl', 'rb')
 proba = pickle.load(pickle_in)
 
 
-with st.form("features"):
-    altura = st.number_input ("Qual a sua altura em metros?")
-    peso = st.number_input ("Qual o seu peso em Quilos (Kg)?")
-    numero_gravidez = st.number_input("Quantas vezes você já engravidou?", min_value = 0, value = 0)
-    glicose = st.number_input ("Quantos mg/dL de Glicose foi reportado no último exame de sangue?", value = 0)
-    pressao_sangue = st.number_input ("Qual a sua pressão sanguínea diastólica em mmHg no último exame realizado?", value = 0)  
-    espessura_pele = st.number_input ("Qual a espessura da dobra subcutanea tricipital em milímetros? (medida realizada com adipometro na regiao do tríceps)", value = 0)
-    insulina = st.number_input ("Quantos µIU/mL de Insulina foi reportado no último exame de sangue?", value = 0)
-    fat_pred_diab = st.number_input ("Qual o seu fator de predisposição à diabetes? (baseado em histórico familiar)", value = 0.0, format = "%f")
-    idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
-    enviar = st.form_submit_button("Enviar")
-
-
 
 def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade, model = classifier, model2 = proba):  
    
@@ -49,22 +36,24 @@ if enviar:
     else:
         st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
 
-open_modal = st.button("Open")
+open_modal = st.button("Realizar teste preliminar agora!")
 if open_modal:
     modal.open()
 
 if modal.is_open():
     with modal.container():
-        st.write("Text goes here")
-
-        html_string = '''
-        <h1>HTML string in RED</h1>
-
-        <script language="javascript">
-          document.querySelector("h1").style.color = "red";
-        </script>
-        '''
-        components.html(html_string)
+        st.write("Responda os itens abaixo para ter um diagnóstico preliminar de Diabetes.")
+        with st.form("features"):
+            altura = st.number_input ("Qual a sua altura em metros?")
+            peso = st.number_input ("Qual o seu peso em Quilos (Kg)?")
+            numero_gravidez = st.number_input("Quantas vezes você já engravidou?", min_value = 0, value = 0)
+            glicose = st.number_input ("Quantos mg/dL de Glicose foi reportado no último exame de sangue?", value = 0)
+            pressao_sangue = st.number_input ("Qual a sua pressão sanguínea diastólica em mmHg no último exame realizado?", value = 0)  
+            espessura_pele = st.number_input ("Qual a espessura da dobra subcutanea tricipital em milímetros? (medida realizada com adipometro na regiao do tríceps)", value = 0)
+            insulina = st.number_input ("Quantos µIU/mL de Insulina foi reportado no último exame de sangue?", value = 0)
+            fat_pred_diab = st.number_input ("Qual o seu fator de predisposição à diabetes? (baseado em histórico familiar)", value = 0.0, format = "%f")
+            idade = st.number_input ("Qual a sua idade nesse momento?", value = 0)
+            enviar = st.form_submit_button("Enviar")
 
         st.write("Some fancy text")
         value = st.checkbox("Check me")

@@ -26,7 +26,7 @@ def prediction(ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura
         pd.DataFrame({'Pregnancies':[numero_gravidez], 'Glucose':[glicose], 'BloodPressure':[pressao_sangue], 'SkinThickness':[espessura_pele], 'Insulin':[insulina],
        'BMI':[ind_mass_corp], 'DiabetesPedigreeFunction':[fat_pred_diab], 'Age':[idade]}))
     return [prediction, proba]
-if enviar:
+'''if enviar:
     ind_mass_corp = (peso/(altura**2))
     st.write('Seu índice de massa corpórea (IMC) é {:.2f}'.format(ind_mass_corp))
     booleano = prediction (ind_mass_corp, numero_gravidez, glicose, pressao_sangue,espessura_pele,insulina,fat_pred_diab,idade)
@@ -35,7 +35,7 @@ if enviar:
         st.write ('Parabéns, você tem poucas chances de possuir diabetes (Apenas {:.2f}%). Continue cuidando da sua saúde.'.format(100*booleano[1][0] [1]))
     else:
         st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
-
+'''
 open_modal = st.button("Realizar teste preliminar agora!")
 if open_modal:
     modal.open()

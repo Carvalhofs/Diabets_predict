@@ -3,10 +3,13 @@ import pandas as pd
 import numpy as np
 import pickle
 
+st.title("Diabets prediction")
+st.write("""### Aplicação visa proporcionar autodiagnóstico preliminar do usuário
+visando a busca imediata de um médico para diagnóstico precoce de Diabetes""")
 
 pickle_in = open('ensemble_model.pkl', 'rb')
 classifier = pickle.load(pickle_in)
-st.title("Diabets prediction")
+
 pickle_in = open('ensemble_proba_model.pkl', 'rb')
 proba = pickle.load(pickle_in)
 

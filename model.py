@@ -6,7 +6,7 @@ import streamlit_modal as modal
 import streamlit.components.v1 as components
 
 st.title("Diabets prediction")
-st.write("""#### Aplicação busca proporcionar autodiagnóstico preliminar do usuário visando a procura imediata de um médico para diagnóstico precoce de Diabetes.""")
+st.write("""#### Preencha as informações abaixo e clique no botão 'Enviar' para ter o seu diagnóstico.""")
 
 pickle_in = open('ensemble_model.pkl', 'rb')
 classifier = pickle.load(pickle_in)

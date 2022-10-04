@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import streamlit_modal as modal
+import streamlit.components.v1 as components
 
 st.title("Diabets prediction")
 st.write("""#### Aplicação busca proporcionar autodiagnóstico preliminar do usuário visando a procura imediata de um médico para diagnóstico precoce de Diabetes.""")
@@ -47,4 +49,23 @@ if enviar:
     else:
         st.write ('Existe uma chance de {:.2f}% de você ser diabético. Recomenda-se procurar um médico.'.format(100*booleano[1][0] [booleano[0][0]]))
 
+open_modal = st.button("Open")
+if open_modal:
+    modal.open()
 
+if modal.is_open():
+    with modal.container():
+        st.write("Text goes here")
+
+        html_string = '''
+        <h1>HTML string in RED</h1>
+
+        <script language="javascript">
+          document.querySelector("h1").style.color = "red";
+        </script>
+        '''
+        components.html(html_string)
+
+        st.write("Some fancy text")
+        value = st.checkbox("Check me")
+        st.write(f"Checkbox checked: {value}")

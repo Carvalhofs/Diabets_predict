@@ -14,6 +14,6 @@ Isso quer dizer que um em cada dois diabéticos não toma medidas preventivas pa
 E todos sabemos que, no caso do diabetes, descobrir a doença no seu início é fundamental. Se o paciente souber controlar seu nível de glicose e ter acompanhamento médico, poderá evitar consequências gravíssimas, como infarto, derrame cerebral ou cegueira.</p>""", unsafe_allow_html=True)
 
 
-st.write("""#### Clique no botão abaixo para preencher informações necessárias para o diagnóstico.""")
+st.write("""#### Clique no botão abaixo para realizar o teste diagnóstico.""")
 
 st.markdown('<a href="https://carvalhofs-diabets-predict-model-model-hi8fmn.streamlitapp.com/" target="_self"><button type="button">Realizar teste agora!</button></a>', unsafe_allow_html=True)

@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 from st_on_hover_tabs import on_hover_tabs
 
 with st.sidebar:
-        tabs = on_hover_tabs(tabName=['Dashboard', 'Money', 'Economy'], 
+        tabs = on_hover_tabs(tabName=['Diagnóstico', 'Vídeo informativo', 'Contatos especialistas'], 
                              iconName=['dashboard', 'money', 'economy'],
                              styles = {'navtab': {'background-color':'#111',
                                                   'color': '#818181',

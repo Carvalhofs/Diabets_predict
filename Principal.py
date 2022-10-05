@@ -3,6 +3,8 @@ import streamlit_modal as modal
 import streamlit.components.v1 as components
 from st_on_hover_tabs import on_hover_tabs
 
+st.set_page_config(page_title='Diagnóstico Diabetes', layout="expanded", menu_items=None)
+
 st.title("Diagnóstico preliminar - Diabetes")
 
 st.markdown("""<p>O diagnóstico precoce do diabetes é uma ação de prevenção secundária que tem o objetivo de identificar os sinais e sintomas preliminares de uma doença que, segundo o <a href = "https://diabetesatlas.org/", target = "_blank">Atlas Mundial do Diabetes</a>, já atinge mais de 463 milhões de adultos em todo o mundo.

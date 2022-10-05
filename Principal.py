@@ -6,7 +6,4 @@ from st_on_hover_tabs import on_hover_tabs
 st.title("Diagnóstico preliminar - Diabetes")
 st.write("""#### Clique no botão abaixo para preencher informações necessárias para o diagnóstico.""")
 
-open_modal = st.button("Realizar teste preliminar agora!")
-if open_modal:
-    components.iframe('https://carvalhofs-diabets-predict-model-model-hi8fmn.streamlitapp.com/', width = 600, height = 600) 
-        
+st.markdown('<a href="https://carvalhofs-diabets-predict-model-model-hi8fmn.streamlitapp.com/" target="_self"><button type="button">Relizar teste agora!</button></a>', unsafe_allow_html=True)

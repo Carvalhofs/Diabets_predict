@@ -25,7 +25,7 @@ if tabs =='Diagnóstico preliminar':
     components.iframe('https://carvalhofs-diabets-predict-main-h9ch0x.streamlitapp.com/')
 
 elif tabs == 'Vídeo informativo':
-    components.iframe(<iframe width="853" height="480" src="https://www.youtube.com/embed/aErKsc2D8qQ" title="Você sabe o que é Diabetes?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
+    components.iframe("https://www.youtube.com/embed/aErKsc2D8qQ")
 
 elif tabs == 'Contatos especialistas':
     st.title("Tom")

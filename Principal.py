@@ -12,5 +12,5 @@ if open_modal:
 
 if modal.is_open():
     with modal.container():
-        components.iframe('https://carvalhofs-diabets-predict-model-model-hi8fmn.streamlitapp.com/', width = size, height = 600) 
+        components.iframe('https://carvalhofs-diabets-predict-model-model-hi8fmn.streamlitapp.com/', width = 600, height = 600) 
         

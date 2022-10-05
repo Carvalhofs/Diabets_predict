@@ -3,7 +3,7 @@ import streamlit_modal as modal
 import streamlit.components.v1 as components
 from st_on_hover_tabs import on_hover_tabs
 
-st.set_page_config(page_title='Diagnóstico Diabetes', layout="expanded", menu_items=None)
+st.set_page_config(page_title='Diagnóstico Diabetes', layout="wide", menu_items=None, initial_sidebar_state = 'collapsed')
 
 st.title("Diagnóstico preliminar - Diabetes")
 
